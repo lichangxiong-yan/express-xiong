@@ -36,12 +36,12 @@ if (user.comparePassword(password)) {
   };
     // 从 req.session.redirect 中获取要回到的页面地址, 如果获取不到，默认打回首页
     // let redirect = req.session.redirect || "/";
-    // // 跳转
+    // // 跳转 到访问的那个url 就是这个 redirect
     // res.redirect(redirect);
 
     // console.log(req.originalUrl);
-    // res.redirect(req.query.redirect);
-    res.send("登录成功")
+    res.redirect(req.query.redirect);
+    // res.send("登录成功")
   } else {
     // 不通过，用户名或密码不正确
     throw new Error("用户名或密码不正确");

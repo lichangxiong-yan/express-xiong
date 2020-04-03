@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
      */
     // 将当前的url地址给存到session中
     // console.log(req.url);
-    // req.session.redirect = req.url;
+    req.session.redirect = req.url;
     // // 直接打回到登录页面
     res.redirect("/login");
 
